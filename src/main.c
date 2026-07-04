@@ -2,10 +2,9 @@
 #include "stringcheck.h"
 
 int main(void)
+
 {
-    printf("StringCheck %d.%d\n",
-           STRINGCHECK_VERSION_MAJOR,
-           STRINGCHECK_VERSION_MINOR);
+    printf("StringCheck %s\n", sc_version());
 
     return 0;
 }

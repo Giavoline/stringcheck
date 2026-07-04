@@ -1,7 +1,7 @@
 #ifndef STRINGCHECK_H
 #define STRINGCHECK_H
 
-#define STRINGCHECK_VERSION_MAJOR 1
-#define STRINGCHECK_VERSION_MINOR 0
+const char *sc_version(void);
 
 #endif
+
