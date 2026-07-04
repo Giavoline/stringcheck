@@ -1,5 +1,5 @@
 #include <ctype.h>
-
+#include "accents.h"
 #include "normalize.h"
 
 void sc_normalize(char *text)
@@ -31,4 +31,5 @@ void sc_normalize(char *text)
     }
 
     *dst = '\0';
+    sc_convert_accents(text);
 }

@@ -32,7 +32,12 @@ run_test 0 "MATCH" "   hello" "hello"
 run_test 0 "MATCH" "hello    world" "hello world"
 run_test 0 "MATCH" "hello		world" "hello world"
 run_test 1 "DIFFERENT" "hello world" "hello there"
-
+run_test 0 "MATCH" "citta'" "città"
+run_test 0 "MATCH" "perche'" "perché"
+run_test 0 "MATCH" "e\`" "è"
+run_test 0 "MATCH" "universita'" "università"
+run_test 0 "MATCH" "cio'" "ciò"
+run_test 0 "MATCH" "pero'" "però"
 
 usage=$(./stringcheck 2>&1)
 status=$?
