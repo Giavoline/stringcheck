@@ -1,0 +1,23 @@
+# Object files
+*.o
+*.obj
+
+# Executables
+stringcheck
+*.exe
+
+# Libraries
+*.a
+*.so
+*.dll
+*.dylib
+
+# Editors
+*~
+*.swp
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
