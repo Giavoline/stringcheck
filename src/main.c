@@ -1,14 +1,33 @@
-
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "stringcheck.h"
 
-int main(void)
+static void usage(const char *progname)
 {
-    printf("StringCheck %s\n", sc_version());
+    fprintf(stderr,
+            "Usage: %s STRING1 STRING2\n",
+            progname);
+}
 
-    printf("compare(\"abc\", \"abc\") = %d\n",
-           sc_compare("abc", "abc"));
+int main(int argc, char *argv[])
+{
+    int result;
 
-    return 0;
+    if (argc != 3)
+    {
+        usage(argv[0]);
+        return 2;
+    }
+
+    result = sc_compare(argv[1], argv[2]);
+
+    if (result == 0)
+    {
+        puts("MATCH");
+        return 0;
+    }
+
+    puts("DIFFERENT");
+    return 1;
 }
