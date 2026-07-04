@@ -5,8 +5,8 @@
 
 int sc_compare(const char *left, const char *right)
 {
-    char a[1024];
-    char b[1024];
+    char a[SC_MAX_LINE_LENGTH];
+    char b[SC_MAX_LINE_LENGTH];
 
     if (left == NULL || right == NULL)
         return SC_ERROR;

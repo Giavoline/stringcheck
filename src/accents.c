@@ -54,7 +54,11 @@ void sc_convert_accents(char *text)
     }
 
     *dst = '\0';
-
+/*
+ * The converted string never exceeds the size of the temporary
+ * buffer, and the caller guarantees that 'text' has room for
+ * SC_MAX_LINE_LENGTH bytes.
+ */
     strcpy(text, buffer);
 }
 

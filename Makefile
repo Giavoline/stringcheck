@@ -1,5 +1,7 @@
 CC      = gcc
-CFLAGS  = -std=c17 -Wall -Wextra -Wpedantic -Iinclude
+CFLAGS  = -std=c17 -Wall -Wextra -Wpedantic \
+	  -Iinclude \
+	  -Isrc
 LDFLAGS =
 
 TARGET  = stringcheck
