@@ -1,20 +1,21 @@
-
 #include <string.h>
 
 #include "stringcheck.h"
+#include "normalize.h"
 
 int sc_compare(const char *left, const char *right)
 {
+    char a[1024];
+    char b[1024];
+
     if (left == NULL || right == NULL)
         return SC_ERROR;
 
-    return strcmp(left, right);
-}
+    strcpy(a, left);
+    strcpy(b, right);
 
-sc_result sc_validate(const char *text)
-{
-    if (text == NULL)
-        return SC_ERROR;
+    sc_normalize(a);
+    sc_normalize(b);
 
-    return SC_OK;
+    return strcmp(a, b);
 }
