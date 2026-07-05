@@ -25,3 +25,12 @@ test: $(TARGET)
 
 
 .PHONY: all clean test
+
+testlev: src/levenshtein.c tests/test_levenshtein.c
+	$(CC) $(CFLAGS) -Isrc \
+	    tests/test_levenshtein.c \
+	    src/levenshtein.c \
+	    -o test_levenshtein
+	./test_levenshtein
+
+.PHONY: testlev
