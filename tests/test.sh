@@ -39,6 +39,14 @@ run_test 0 "MATCH" "universita'" "università"
 run_test 0 "MATCH" "cio'" "ciò"
 run_test 0 "MATCH" "pero'" "però"
 
+run_test 0 "MATCH" "Hello world" "hello world"
+run_test 0 "MATCH" "Hello World" "hello world"
+
+run_test 1 "DIFFERENT" "HELLO world" "hello world"
+run_test 1 "DIFFERENT" "hello WORLD" "hello World"
+
+run_test 1 "DIFFERENT" "mArio Rossi" "Mario Rossi"
+
 usage=$(./stringcheck 2>&1)
 status=$?
 

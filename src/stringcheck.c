@@ -1,5 +1,5 @@
 #include <string.h>
-
+#include "config.h"
 #include "stringcheck.h"
 #include "normalize.h"
 

@@ -2,6 +2,40 @@
 #include "accents.h"
 #include "normalize.h"
 
+
+
+static char ascii_tolower(char c)
+{
+    if (c >= 'A' && c <= 'Z')
+        return c + ('a' - 'A');
+
+    return c;
+}
+
+static void fold_word_initial_case(char *text)
+{
+    int new_word = 1;
+
+    while (*text)
+    {
+        if (*text == ' ')
+        {
+            new_word = 1;
+        }
+        else
+        {
+            if (new_word)
+            {
+                *text = (char)ascii_tolower((unsigned char)*text);
+                new_word = 0;
+            }
+        }
+
+        text++;
+    }
+
+}
+
 void sc_normalize(char *text)
 {
     char *src = text;
@@ -32,4 +66,5 @@ void sc_normalize(char *text)
 
     *dst = '\0';
     sc_convert_accents(text);
+    fold_word_initial_case(text);
 }
