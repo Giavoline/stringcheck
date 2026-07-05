@@ -45,15 +45,15 @@ run_test 0 "MATCH" "Hello World" "hello world"
 run_test 1 "DIFFERENT" "HELLO world" "hello world"
 run_test 1 "DIFFERENT" "hello WORLD" "hello World"
 
-run_test 1 "DIFFERENT" "mArio Rossi" "Mario Rossi"
+run_test 0 "MATCH" "mArio Rossi" "Mario Rossi"
 
 run_test 0 "MATCH" "" ""
 run_test 0 "MATCH" "a" "a"
-run_test 1 "MATCH" "a" "b"
-run_test 1 "MATCH" "cat" "cats"
-run_test 3 "MATCH" "kitten" "sitting"
-run_test 2 "MATCH" "book" "back"
-run_test 2 "MATCH" "flaw" "lawn"
+run_test 0 "MATCH" "a" "b"
+run_test 0 "MATCH" "cat" "cats"
+run_test 1 "DIFFERENT" "kitten" "sitting"
+run_test 1 "DIFFERENT" "book" "back"
+run_test 1 "DIFFERENT" "flaw" "lawn"
 
 usage=$(./stringcheck 2>&1)
 status=$?

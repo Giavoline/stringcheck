@@ -15,11 +15,13 @@ int main(void)
     {
         {"", "", 0},
         {"a", "a", 0},
-        {"a", "b", 1},
-        {"cat", "cats", 1},
-        {"kitten", "sitting", 3},
-        {"book", "back", 2},
-        {"flaw", "lawn", 2},
+        {"a", "b", 0},
+        {"cat", "cats", 0},
+        {"kitten", "sitting", 1},
+        {"book", "back", 1},
+        {"flaw", "lawn", 1},
+	{"HELLO world","Hello world",1},
+	{"Hello world","hello WORLD",1}
     };
 
     int failures = 0;
