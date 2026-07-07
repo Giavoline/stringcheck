@@ -54,7 +54,10 @@ run_test 0 "MATCH" "cat" "cats"
 run_test 1 "DIFFERENT" "kitten" "sitting"
 run_test 1 "DIFFERENT" "book" "back"
 run_test 1 "DIFFERENT" "flaw" "lawn"
-
+run_test 1 "DIFFERENT" "001 hello" "hello"
+run_test 1 "DIFFERENT" "001 hello" "002 hello"
+run_test 1 "DIFFERENT" "123hello" "hello"
+run_test 0 "MATCH" "hello" "002 hello"
 usage=$(./stringcheck 2>&1)
 status=$?
 

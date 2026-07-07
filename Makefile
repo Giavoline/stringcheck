@@ -34,3 +34,15 @@ testlev: src/levenshtein.c tests/test_levenshtein.c
 	./test_levenshtein
 
 .PHONY: testlev
+
+
+testnumber: src/numbers.c tests/test_leading_num.c
+	$(CC) $(CFLAGS) -Isrc \
+	    tests/test_leading_num.c \
+	    src/numbers.c \
+	    -o test_leading_number
+	./test_leading_number
+
+.PHONY: testnumber
+
+
